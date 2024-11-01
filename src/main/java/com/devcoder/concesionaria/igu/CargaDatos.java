@@ -1,19 +1,15 @@
 package com.devcoder.concesionaria.igu;
 
-import com.devcoder.concesionaria.logica.Automovil;
 import com.devcoder.concesionaria.logica.Controladora;
-import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 
-public class ModificarAutomovil extends javax.swing.JPanel {
+public class CargaDatos extends javax.swing.JPanel {
 
     private Controladora control = null;
-    private Automovil automovil = null;
     
-    public ModificarAutomovil(int idAutomovil) {
+    public CargaDatos() {
         control = new Controladora();
         initComponents();
-        cargarDatos(idAutomovil);
     }
 
     @SuppressWarnings("unchecked")
@@ -44,9 +40,9 @@ public class ModificarAutomovil extends javax.swing.JPanel {
         jlTitulo.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jlTitulo.setForeground(new java.awt.Color(0, 0, 0));
         jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlTitulo.setText("MODIFICACIÓN DE AUTOMÓVIL");
+        jlTitulo.setText("ALTA DE AUTOMÓVILES");
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edicionDeAuto256x256.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coche256x256.png"))); // NOI18N
 
         datos.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -138,13 +134,13 @@ public class ModificarAutomovil extends javax.swing.JPanel {
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlCantPuertas)
                     .addComponent(txtCantPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         botones.setBackground(new java.awt.Color(204, 204, 204));
 
         btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        btnModificar.setText("Modificar");
+        btnModificar.setText("Guardar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
@@ -185,15 +181,15 @@ public class ModificarAutomovil extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap()
+                .addComponent(jlTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addComponent(datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(imagen)
                 .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,56 +201,39 @@ public class ModificarAutomovil extends javax.swing.JPanel {
                 .addGap(17, 17, 17)
                 .addComponent(jlTitulo)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-
+        
         if(validar()){
             return;
         }
-
+        
         try{
-            // Datos del automóvil
-            int idAutomovil = this.automovil.getId();
             String modelo = txtModelo.getText();
             String marca = txtMarca.getText();
             String motor = txtMotor.getText();
             String color = txtColor.getText();
             String patente = txtPatente.getText();
             int cantPuertas = Integer.parseInt(txtCantPuertas.getText());
-
-            if(JOptionPane.showConfirmDialog(this, "¿Está seguro que desea modificar este registro?", "Confirmación para modificar", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
-                
-                control.modificarAutomovil(idAutomovil, modelo, marca, motor, color, patente, cantPuertas);
-                
-                // Mensaje de confirmación
-                JOptionPane.showMessageDialog(this, "Automóvil modificado correctamente.", "Modificación exitosa", JOptionPane.INFORMATION_MESSAGE);
-                
-                // Hacer visible la interfaz gráfica para ver datos
-                VerDatos verDatos = new VerDatos();
-                verDatos.setSize(660,460);
-                verDatos.setLocation(0,0);
-                
-                this.removeAll();
-                this.add(verDatos, BorderLayout.CENTER);
-                this.revalidate();
-                this.repaint();
-            }
- 
+            
+            control.guardarAutomovil(modelo, marca, motor, color, patente, cantPuertas);
+            JOptionPane.showMessageDialog(this, "Automóvil agregado correctamente.", "Guardado exitoso", JOptionPane.INFORMATION_MESSAGE);
+            
         }catch(java.lang.NumberFormatException nfe){
             JOptionPane.showMessageDialog(this, "Debe ingresar un valor númerico en el campo \'Cantidad de puertas\'", "Error al procesar dato", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+        
         txtModelo.setText(null);
         txtMarca.setText(null);
         txtMotor.setText(null);
@@ -287,25 +266,10 @@ public class ModificarAutomovil extends javax.swing.JPanel {
     private boolean validar() {
         
         if(txtModelo.getText().isEmpty() || txtMarca.getText().isEmpty() || txtMotor.getText().isEmpty() || txtColor.getText().isEmpty() || txtPatente.getText().isEmpty() || txtCantPuertas.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Debe completar todos los campos para modificar.", "Error al modificar automóvil", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos para guardar.", "Error al guardar automóvil", JOptionPane.ERROR_MESSAGE);
             return true;
         }
         
         return false;
-    }
-
-    private void cargarDatos(int idAutomovil) {
-        
-        // Buscar vehículo en la BD
-        this.automovil = control.traerAutomovil(idAutomovil);
-        
-        // Setear los valores del auto encontrado en el formulario
-        txtModelo.setText(automovil.getModelo());
-        txtModelo.setText(automovil.getModelo());
-        txtMarca.setText(automovil.getMarca());
-        txtMotor.setText(automovil.getMotor());
-        txtColor.setText(automovil.getColor());
-        txtPatente.setText(automovil.getPatente());
-        txtCantPuertas.setText(String.valueOf(automovil.getCantidadPuertas()));
     }
 }

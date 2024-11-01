@@ -14,15 +14,16 @@ import javax.persistence.criteria.Root;
 
 public class AutomovilJpaController implements Serializable {
 
+    private EntityManagerFactory emf = null;
+    
+    // Constructor
+    public AutomovilJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("ConcesionariaPU");
+    }
+    
     public AutomovilJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
-    public AutomovilJpaController(){
-        emf  = Persistence.createEntityManagerFactory("ConcesionariaPU");
-    }
-    
-    private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();

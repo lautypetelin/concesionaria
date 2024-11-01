@@ -21,17 +21,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlTitulo" pref="648" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="datos" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="imagen" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jlTitulo" pref="648" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -42,17 +42,17 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="jlTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="datos" max="32767" attributes="0"/>
-                  <Component id="imagen" min="-2" pref="270" max="-2" attributes="0"/>
+                  <Component id="imagen" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botones" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,13 +67,13 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="MODIFICACI&#xd3;N DE AUTOM&#xd3;VIL"/>
+        <Property name="text" type="java.lang.String" value="ALTA DE AUTOM&#xd3;VILES"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="imagen">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/edicionDeAuto256x256.png"/>
+          <Image iconType="3" name="/images/coche256x256.png"/>
         </Property>
       </Properties>
     </Component>
@@ -112,7 +112,7 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txtModelo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtModelo" max="32767" attributes="0"/>
                               <Component id="txtMarca" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtMotor" alignment="1" max="32767" attributes="0"/>
                               <Component id="txtColor" alignment="1" max="32767" attributes="0"/>
@@ -157,7 +157,7 @@
                       <Component id="jlCantPuertas" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCantPuertas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -293,7 +293,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="20" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Modificar"/>
+            <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarActionPerformed"/>

@@ -1,18 +1,18 @@
 package com.devcoder.concesionaria.logica;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Basic;
 
 @Entity
 public class Automovil implements Serializable {
     
-    //Atributos
+    // Atributos
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private int id;
     @Basic
     private String modelo;
@@ -22,9 +22,18 @@ public class Automovil implements Serializable {
     private String patente;
     private int cantidadPuertas;
     
-    //Constructores
+    // Constructores
     public Automovil() {}
 
+    public Automovil(String modelo, String marca, String motor, String color, String patente, int cantidadPuertas) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.motor = motor;
+        this.color = color;
+        this.patente = patente;
+        this.cantidadPuertas = cantidadPuertas;
+    }
+    
     public Automovil(int id, String modelo, String marca, String motor, String color, String patente, int cantidadPuertas) {
         this.id = id;
         this.modelo = modelo;
@@ -35,7 +44,7 @@ public class Automovil implements Serializable {
         this.cantidadPuertas = cantidadPuertas;
     }
     
-    //Métodos getter y setter
+    // Getters y Setters
     public int getId() {
         return id;
     }
