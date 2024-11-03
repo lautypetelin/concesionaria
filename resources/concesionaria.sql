@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2024 a las 21:41:13
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 03-11-2024 a las 01:37:17
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,25 +44,12 @@ CREATE TABLE `automovil` (
 --
 
 INSERT INTO `automovil` (`ID`, `CANTIDADPUERTAS`, `COLOR`, `MARCA`, `MODELO`, `MOTOR`, `PATENTE`) VALUES
-(1, 4, 'Rojo', 'Renault', 'Oroch', '2.0', 'AA123BI');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sequence`
---
-
-CREATE TABLE `sequence` (
-  `SEQ_NAME` varchar(50) NOT NULL,
-  `SEQ_COUNT` decimal(38,0) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `sequence`
---
-
-INSERT INTO `sequence` (`SEQ_NAME`, `SEQ_COUNT`) VALUES
-('SEQ_GEN', 50);
+(1, 4, 'Rojo', 'Renault', 'Oroch', '2.0', 'AA123BI'),
+(2, 5, 'Gris', 'Volkswagen', 'Gol', '1.6', 'AA596GC'),
+(3, 4, 'Azul', 'Chevrolet', 'Cruze', '1.4 Turbo', 'AB987CC'),
+(7, 5, 'Rojo', 'Peugeot', '408', '2.0', 'PE422EW'),
+(8, 4, 'Azul', 'Fiat', 'Duna', '1.7', 'AEO 914'),
+(9, 3, 'Verde', 'Chevrolet', 'Corsa', '2.4', 'AE123XQ');
 
 --
 -- Índices para tablas volcadas
@@ -75,10 +62,14 @@ ALTER TABLE `automovil`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `sequence`
+-- AUTO_INCREMENT de las tablas volcadas
 --
-ALTER TABLE `sequence`
-  ADD PRIMARY KEY (`SEQ_NAME`);
+
+--
+-- AUTO_INCREMENT de la tabla `automovil`
+--
+ALTER TABLE `automovil`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
