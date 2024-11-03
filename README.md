@@ -2,6 +2,12 @@
 
 La tienda de venta de automóviles requiere un sistema que permita realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de todos los vehículos disponibles para luego publicarlos en un catálogo. A continuación, se presenta el modelado de la clase `Automovil` y la estructura del sistema, respetando el modelo de capas.
 
+![Pantalla inicial](https://github.com/user-attachments/assets/2945092b-d844-4fe0-9da7-f8c76f9d9b69)
+
+## Almacenamiento en Base de Datos
+
+Esta aplicación de escritorio registra en una base de datos los datos tanto de mascotas como de dueños que se ingresen desde la interfaz gráfica de usuario basado en los conceptos del MODELO DE CAPAS.
+
 ## Modelo de Clase Automovil
 
 La clase `Automovil` se ha modelado con los siguientes atributos:
@@ -28,36 +34,34 @@ La clase `Automovil` se ha modelado con los siguientes atributos:
 ### 4. Eliminar (Delete)
 - Método para eliminar un automóvil del sistema.
 
-## Modelo de Capas
+## Uso de la Aplicación
 
-El sistema sigue el modelo de capas para una mejor organización y separación de responsabilidades:
+1. **Registro de Vehiculo:**
+   - Completa el formulario con los datos de la mascota y su dueño.
+  
+![Carga de datos](https://github.com/user-attachments/assets/520d4845-f947-4799-838f-e5fd214f4a63)
 
-### 1. Lógica
-- Contiene las operaciones CRUD de la clase `Automovil`.
-- Gestiona la lógica de negocio.
+2. **Visualización de Datos:**
+   - La aplicación permitirá visualizar, editar y/o eliminar los datos registrados previamente.
+  
+![Visualización de datos](https://github.com/user-attachments/assets/f4754b96-7ccc-43ba-811f-95dcab1d4c16)
 
-### 2. Interfaz Gráfica (GUI)
-- Proporciona la interfaz de usuario para interactuar con el sistema.
-- Permite al usuario realizar operaciones CRUD de forma intuitiva.
-
-### 3. Persistencia (JPA)
-- Se encarga del almacenamiento y recuperación de datos en una base de datos.
-- Utiliza Java Persistence API (JPA) para la interacción con la capa de base de datos.
-
-## Uso del Sistema
-
-1. Ejecutar la aplicación.
-2. Utilizar la interfaz gráfica para agregar, visualizar, actualizar o eliminar automóviles.
+3. **Interfaz Gráfica Atractiva:**
+   - La aplicación implementa una interfaz gráfica intuitiva para una experiencia de usuario atractiva.
 
 ## Requisitos
 
-- Java Development Kit (JDK) instalado.
-- Conexión a una base de datos compatible con JPA.
+- JDK 17.0.6
+- Algún Sistema Gestor de Base de Datos (SGBD)
+- Importar al Gestor de Base de Datos el archivo .sql (ubicado en la carpeta resources) para poder hacer uso de la persistencia en la aplicación.
+
+## Créditos
+
+- **Desarrollado por**: Lautaro Tomás Israel Petelin
+- **Tecnologías utilizadas**: Java 17.0.6, XAMPP
+- **IDE**: Netbeans 17
+- **Autor de la consigna**: Luisina de Paula / TodoCode
 
 ## Contribuciones
 
-¡Las contribuciones son bienvenidas! Si encuentras algún problema o tienes sugerencias de mejora, no dudes en abrir un problema o enviar una solicitud de extracción.
-
----
-
-¡Gracias por utilizar el Sistema de Gestión de Automóviles de la Concesionaria! Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto conmigo.
+¡Las contribuciones son bienvenidas! Si encuentras algún problema o tienes sugerencias de mejora, no dudes en abrir un problema o enviar una pull request.
