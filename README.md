@@ -6,7 +6,7 @@ La tienda de venta de automóviles requiere un sistema que permita realizar oper
 
 ## Almacenamiento en Base de Datos
 
-Esta aplicación de escritorio registra en una base de datos los datos tanto de mascotas como de dueños que se ingresen desde la interfaz gráfica de usuario basado en los conceptos del MODELO DE CAPAS.
+Esta aplicación de escritorio registra en una base de datos los datos vehiculos que se ingresen desde la interfaz gráfica de usuario basado en los conceptos del MODELO DE CAPAS.
 
 ## Modelo de Clase Automovil
 
